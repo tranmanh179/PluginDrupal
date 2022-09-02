@@ -1,0 +1,7 @@
+api_sms.addSMSApi:
+  path: '/addSMSApi'
+  defaults:
+    _controller: '\Drupal\api_sms\Controller\APISMSController::addSMSApi'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _access: 'TRUE'

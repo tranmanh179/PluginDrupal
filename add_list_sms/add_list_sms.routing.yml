@@ -1,0 +1,7 @@
+add_list_sms.add:
+  path: '/add-list-sms'
+  defaults:
+    _controller: '\Drupal\add_list_sms\Controller\AddListSMSController::add'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _access: 'TRUE'

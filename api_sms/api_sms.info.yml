@@ -1,0 +1,5 @@
+name: 'API SMS'
+type: module
+description: 'api connect sms'
+core_version_requirement: ^8 || ^9
+package: 'SMS'
