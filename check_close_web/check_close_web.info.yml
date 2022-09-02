@@ -1,0 +1,6 @@
+name: 'Check close website'
+type: module
+description: 'Notification when close website'
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'

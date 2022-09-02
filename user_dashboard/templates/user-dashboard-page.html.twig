@@ -1,0 +1,18 @@
+<div id="dashboard" class="clearfix user-dashboard jquery-once-2-processed">
+  {% include 'user-dashboard-customize.html.twig' %}
+
+  {% for row in regions %}
+  <div class="row">
+    {% for id, region in row %}
+    <div id="{{ id }}" class="user-dashboard-region col-{{ region.width }}" droppable="true">
+      <div class="region clearfix" title="{{ region.name }}" data-bs-toggle="tooltip" data-bs-placement="top">
+        {% for block in region.block %}
+          {{ block }}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+</div>

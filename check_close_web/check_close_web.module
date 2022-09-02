@@ -1,0 +1,11 @@
+<?php
+// chèn vào cuối tất cả các trang
+function check_close_web_page_attachments_alter(array &$attachments){
+    //$attachments['#attached']['library'][] = 'check_close_web/check_close_web'; // tên module/tên libraries
+}
+
+function check_close_web_form_alter(&$form, &$form_state, $form_id) {
+    $form['#attached']['library'][] = 'check_close_web/check_close_web';
+}
+
+

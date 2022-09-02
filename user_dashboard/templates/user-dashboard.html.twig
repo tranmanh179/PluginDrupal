@@ -1,0 +1,14 @@
+<details class="card details mt-1 mb-1" data-once="details" data-weight="{{ weight }}" {% if not collapse %} open {% endif %}>
+  {% if title %}
+    <summary aria-controls="{{ id }}" aria-expanded="{% if collapse %}false{% else %}true{% endif %}"
+             role="button" class="card-header" data-bid="{{ bid }}" >
+      <button type="button" class="btn-close hidden float-end" aria-label="Close"data-bid="{{ bid }}"></button>
+      {{ title }}
+    </summary>
+  {% endif %}
+  <div id="card-{{ id }}" class="collapse {% if not collapse %} show {% endif %}" aria-labelledby="heading-{{ id }}">
+    <div class="card-body">
+      {{ content }}
+    </div>
+  </div>
+</details>

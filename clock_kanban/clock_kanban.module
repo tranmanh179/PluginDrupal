@@ -1,0 +1,36 @@
+<?php
+// chèn vào cuối tất cả các trang
+function clock_kanban_page_attachments_alter(array &$attachments){
+    $attachments['#attached']['library'][] = 'clock_kanban/view_kanban';
+
+    $countingTime = array();
+    $taskCoutingTime = array();
+
+    // lấy danh sách tính giờ
+    $database = \Drupal::database();
+    $listNodeTime = $database->select('clock_kanban', 'f')
+      ->fields('f')
+      ->condition('uid', \Drupal::currentUser()->id(), '=')
+      ->execute();
+
+    if ($listNodeTime) {
+      while ($row = $listNodeTime->fetchAssoc()) {
+        if(empty($countingTime[$row['idNode']])){
+          $countingTime[$row['idNode']] = 0;
+        }
+
+        if($row['timeEnd']>0) {
+          $countingTime[$row['idNode']] += $row['timeCount'];
+        } else {
+          $countingTime[$row['idNode']] += time() - $row['timeStart'];
+        }
+
+        if(!in_array($row['idNode'], $taskCoutingTime) && $row['timeEnd']==0) {
+          $taskCoutingTime[] = $row['idNode'];
+        }
+      }
+    }
+
+    $attachments['#attached']['drupalSettings']['clockkanban']['countingTime'] = $countingTime;
+    $attachments['#attached']['drupalSettings']['clockkanban']['taskCoutingTime'] = $taskCoutingTime;
+}

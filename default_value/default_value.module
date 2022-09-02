@@ -1,0 +1,14 @@
+<?php
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function default_value_form_BASE_FORM_ID_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function default_value_form_field_widget_daily_report_form_alter(&$element, &$form_state, $context) {
+  $a=1;
+}

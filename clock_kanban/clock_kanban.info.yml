@@ -1,0 +1,5 @@
+name: 'Clock Kanban'
+type: module
+description: 'Stopwatch when start working'
+core_version_requirement: ^8 || ^9
+package: 'Kanban'

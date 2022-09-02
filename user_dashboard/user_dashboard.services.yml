@@ -1,0 +1,4 @@
+services:
+  user_dashboard.blocks:
+    class: Drupal\user_dashboard\UserDashboardBlocks
+    arguments: ['@plugin.manager.block', '@context.repository', '@plugin_form.factory']

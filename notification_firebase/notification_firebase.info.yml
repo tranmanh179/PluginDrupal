@@ -1,0 +1,7 @@
+name: 'Notification Firebase'
+type: module
+description: 'Send notification with Firebase'
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'
+configure: notification_firebase.settings

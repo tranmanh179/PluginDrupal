@@ -1,0 +1,27 @@
+notification_firebase:
+  version: 1.x
+  js:
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js": { type: external }
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js": { type: external }
+
+    js/firebasejs/7.13.2/firebase-app.js: {}
+    js/firebasejs/7.13.2/firebase-analytics.js: {}
+    js/firebasejs/7.13.2/firebase-functions.js: {}
+    js/firebasejs/7.13.2/firebase-messaging.js: {}
+    js/firebasejs/7.13.2/firebase-storage.js: {}
+    js/firebasejs/7.13.2/firebase-performance.js: {}
+    js/firebasejs/7.13.2/firebase-remote-config.js: {}
+
+    
+    js/config.js: {}
+    js/notification_firebase.js: {}
+  css: 
+    module: 
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css": { type: external }
+    theme: 
+      "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css": { type: external }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

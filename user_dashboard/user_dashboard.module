@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function user_dashboard_theme() {
+  return [
+    'user_dashboard' => [
+      'render element' => 'item',
+      'variables' => [
+        'id' => '',
+        'delta' => '',
+        'collapse' => '',
+        'title' => '',
+        'content' => '',
+        'bid' => '',
+        'weight' => 0,
+      ],
+    ],
+    'user_dashboard_page' => [
+      'render element' => 'item',
+      'variables' => [
+        'configuration' => '',
+        'message' => '',
+        'customize' => '',
+        'regions' => [],
+      ],
+    ],
+    'user_dashboard_customize' => [
+      'render element' => 'item',
+    ],
+    'user_dashboard_disabled_blocks' => [
+      'render element' => 'item',
+      'variables' => [
+        'blocks' => [],
+      ],
+    ],
+    'user_dashboard_admin_display_form' => [
+      'base hook' => 'block',
+      'template' => 'block-admin-display-form',
+      'render element' => 'form',
+    ],
+  ];
+}
+
+/**
+ * Insert user dashboard blocks when adding an account.
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function user_dashboard_user_insert(\Drupal\Core\Entity\EntityInterface $entity) {
+
+  $rowRegions = \Drupal::service('user_dashboard.blocks')->getRegions();
+  $regions = [];
+  foreach ($rowRegions as $row) {
+    $regions = array_merge($regions, array_keys($row));
+  }
+  $roles = $entity->getRoles(TRUE);
+  $config = \Drupal::config('user_dashboard.role');
+  $uid = $entity->id();
+  $insertBlocks = [];
+  foreach ($regions as $region) {
+    foreach ($roles as $role) {
+      $configUserBlocks = $region . '-' . $role;
+      if (!empty($blocks = $config->get($configUserBlocks))) {
+        foreach ($blocks as $blockId) {
+          $insertBlocks[$blockId] = [$blockId, 1, 0, $region, $uid];
+        }
+      }
+    }
+  }
+  if (!empty($insertBlocks)) {
+    foreach ($insertBlocks as $insertBlock) {
+      $bid = \Drupal::database()
+        ->insert('user_dashboard_block')
+        ->fields(['delta', 'status', 'weight', 'region', 'uid'])
+        ->values($insertBlock)
+        ->execute();
+    }
+
+  }
+
+}

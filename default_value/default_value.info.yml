@@ -1,0 +1,6 @@
+name: 'Default value'
+type: module
+description: 'Default value in form'
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'

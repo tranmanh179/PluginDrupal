@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Todo module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function todo_theme() {
+  return [
+    'todo_block' => [
+      'variables' => [
+        'content' => NULL,
+        'attributes' => [],
+      ],
+      'render element' => 'element',
+    ],
+  ];
+}

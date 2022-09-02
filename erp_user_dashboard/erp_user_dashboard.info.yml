@@ -1,0 +1,8 @@
+name: 'ERP User Dashboard'
+type: module
+description: 'ERP User Dashboard'
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'
+dependencies:
+  - drupal:views

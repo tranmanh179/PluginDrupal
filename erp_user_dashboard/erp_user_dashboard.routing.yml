@@ -1,0 +1,7 @@
+erp_user_dashboard.dashboard:
+  path: '/user/{user_id}/dashboard'
+  defaults:
+    _controller: '\Drupal\erp_user_dashboard\Controller\ERPUserDashboardController::index'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _access: 'TRUE'

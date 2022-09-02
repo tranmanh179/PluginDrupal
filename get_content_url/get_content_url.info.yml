@@ -1,0 +1,6 @@
+name: 'Get content URL'
+type: module
+description: 'This module get content as title, body, image from URL link'
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'

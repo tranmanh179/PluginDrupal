@@ -1,0 +1,10 @@
+get_content_url:
+  version: 1.x
+  js:
+    js/get_content_url.js: {}
+    
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

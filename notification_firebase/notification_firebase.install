@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function notification_firebase_schema() {
+  $schema = [];
+  $schema['notification_firebase'] = [
+    'description' => 'Table storing user token device for firebase',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Id of the token device.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "User's {users}.uid.",
+      ],
+      'token' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Token of device.',
+      ],
+      
+      'created' => [
+        'mysql_type' => 'DATETIME',
+        'not null' => TRUE,
+      ]
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}

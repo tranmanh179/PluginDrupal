@@ -1,0 +1,23 @@
+notification_firebase.settings:
+  path: '/admin/config/notification_firebase/settings'
+  defaults:
+    _form: '\Drupal\notification_firebase\Form\NotificationFirebaseSettingsForm'
+    _title: 'Configuration'
+  requirements:
+    _permission: 'edit notification firebase plugin settings'
+
+notification_firebase.save_token_device:
+  path: '/notification-firebase-save-token-device'
+  defaults:
+    _controller: '\Drupal\notification_firebase\Controller\NotificationFirebaseController::saveTokenDevice'
+    _disable_route_normalizer: 'TRUE'
+  requirements:
+    _access: 'TRUE'
+
+notification_firebase.send_notification:
+  path: '/admin/config/notification_firebase/send_notification'
+  defaults:
+    _form: '\Drupal\notification_firebase\Form\SendNotificationFirebaseForm'
+    _title: 'Send notification'
+  requirements:
+    _permission: 'send notification firebase plugin'

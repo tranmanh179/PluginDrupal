@@ -1,0 +1,7 @@
+<?php
+// chèn vào cuối tất cả các trang
+function get_content_url_page_attachments_alter(array &$attachments){
+    $attachments['#attached']['library'][] = 'get_content_url/get_content_url'; // tên module/tên libraries
+}
+
+

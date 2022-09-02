@@ -1,0 +1,86 @@
+user_dashboard.dashboard:
+  path: '/user/dashboard'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::goto'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'view all users dashboards'
+
+user_dashboard.id_dashboard:
+  path: '/user/{user}/dashboard'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::dashboard'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'view all users dashboards'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+user_dashboard.customize:
+  path: '/user/{user}/dashboard/customize'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::customize'
+    _title: 'Customize dashboard'
+  requirements:
+    _permission: 'view all users dashboards'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+user_dashboard.drawer:
+  path: '/user/{user}/dashboard/drawer'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::drawer'
+    _title: 'Drawer Dashboard'
+  requirements:
+    _permission: 'view all users dashboards'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+user_dashboard.settings:
+  path: '/admin/dashboard/user_dashboard/settings'
+  defaults:
+    _form: '\Drupal\user_dashboard\Form\UserDashboardSettingsForm'
+    _title: 'User Dashboard Settings'
+    _description: 'Configure user dashboard settings.'
+  requirements:
+    _permission: 'administer blocks'
+
+user_dashboard.set_default:
+  path: '/admin/dashboard/user_dashboard/set_default'
+  defaults:
+    _form: '\Drupal\user_dashboard\Form\UserDashboardByRole'
+    _title: 'Show user dashboard blocks by role'
+    _description: 'Configure show user dashboard blocks by role.'
+  requirements:
+    _permission: 'set default user_dashboard blocks'
+
+user_dashboard.block_content:
+  path: '/user/{user}/dashboard/block-content/{delta}'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::showBlockContent'
+    _title: 'Show block Dashboard'
+    delta: 0
+  requirements:
+    _permission: 'view all users dashboards'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+user_dashboard.update:
+  path: '/user/{user}/dashboard/update'
+  defaults:
+    _controller: '\Drupal\user_dashboard\Controller\UserDashboardController::update'
+    _title: 'Show block Dashboard'
+  requirements:
+    _permission: 'view all users dashboards'
+  options:
+    parameters:
+      user:
+        type: entity:user

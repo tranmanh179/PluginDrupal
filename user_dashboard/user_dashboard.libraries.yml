@@ -1,0 +1,11 @@
+user_dashboard:
+  version: 1.x
+  js:
+    js/user_dashboard.js: {}
+  css:
+    layout:
+      css/user_dashboard.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

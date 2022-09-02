@@ -1,0 +1,6 @@
+name: 'Json Table'
+type: module
+description: ''
+core_version_requirement: ^8 || ^9
+package: 'ManMo Web'
+version: '8.x-1.0'

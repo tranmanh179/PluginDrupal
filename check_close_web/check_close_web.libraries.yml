@@ -1,0 +1,9 @@
+check_close_web:
+  version: 1.x
+  js:
+    js/check_close_web.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,5 @@
+name: Todo
+type: module
+description: Example Todo
+package: Custom
+core_version_requirement: ^9 || ^10

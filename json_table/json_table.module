@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function json_table_theme($existing, $type, $theme, $path) {
+  $variables = [
+    'json_table_chart' => [
+      'variables' => [
+        'id_field_name' => 'json-table-chart',
+        'settings' => NULL,
+      ],
+      'template' => 'json-table-chart',
+    ],
+  ];
+
+  return $variables;
+}

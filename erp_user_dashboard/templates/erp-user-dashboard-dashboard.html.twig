@@ -1,0 +1,49 @@
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+// kéo
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+// thả
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  document.getElementById('showID').innerHTML= 'ID vừa chọn: '+data;
+}
+</script>
+
+<style>
+#div1 {
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mb-15{
+  margin-bottom: 15px;
+}
+</style>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/js/all.min.js"></script>
+
+
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    {% for block in listBlock %}
+      <button type="button" id="{{ block.id }}" class="btn btn-secondary mb-15" draggable="true" ondragstart="drag(event)">{{ block.admin_label }}</button>
+      {{ block }}
+    {% endfor %}
+  </div>
+</div>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" class="row"></div>
+<p id="showID"></p>

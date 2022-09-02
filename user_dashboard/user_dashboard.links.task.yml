@@ -1,0 +1,4 @@
+user_dashboard.id_dashboard:
+  route_name: user_dashboard.id_dashboard
+  base_route: entity.user.canonical
+  title: 'Dashboard'

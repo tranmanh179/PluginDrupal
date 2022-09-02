@@ -1,0 +1,12 @@
+{% for key, block in blocks %}
+<div id="block-{{ block.provider }}-{{ block.id }}"
+    class="col-auto disabled-block block block-{{ block.provider }}-{{ block.id }} module-{{ block.provider }} delta-{{ block.id }}">
+  <h4 id="{{ key|replace({':':'-'}) }}" data-delta="{{ key }}" class="btn btn-outline-dark" draggable="true">
+    <a href="#" title="{{ 'Drag to re-order'|trans }}" class="tabledrag-handle text-decoration-none"><i class="handle">&nbsp;</i></a>
+    {{ block.admin_label }} {{ block.category }}</h4>
+  <div class="content"></div>
+</div>
+{% endfor %}
+<div class="clearfix">
+  <a class="btn btn-success button" href="/user/dashboard">{{ "Finish"|trans }}</a>
+</div>

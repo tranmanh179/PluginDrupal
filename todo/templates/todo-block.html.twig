@@ -1,0 +1,34 @@
+<div id="apptodo" class="vue-todo-container">
+  <div class="input-group">
+    <label>New todo</label>
+
+    <input v-model="newItem.text" name="text" type="text" class="form-control" />
+    <label>Date</label>
+    <input v-model="newItem.due" name="due" type="date" class="form-control"/>
+    <button type="button" @click="addNew" class="btn btn-primary">Add</button>
+  </div>
+  <hr/>
+
+  <div v-for="(todo, idx) in todos" class="vue-todo-margins">
+    <div class="vue-todo-items">
+      <h4 class="vue-todo-margins vue-todo-inline">
+        {% verbatim %}
+        <strike v-if="todo.completed">{{todo.text}}</strike>
+        <span v-else>{{todo.text}}</span>
+        {% endverbatim %}
+      </h4>
+
+      <p class="vue-todo-inline">
+        {% verbatim %}
+        <small>Date: {{todo.due}}</small>
+        {% endverbatim %}
+      </p>
+
+      <div class="vue-todo-inline">
+        <button type="button" v-if="!todo.completed"  @click="done(idx)"> Done</button>
+        <button type="button" v-else @click="undone(idx)"> Undo</button>
+        <a @click="remove(idx)" href='#'><span>&times;</span></a>
+      </div>
+    </div>
+  </div>
+</div>

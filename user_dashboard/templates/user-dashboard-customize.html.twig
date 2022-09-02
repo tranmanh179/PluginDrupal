@@ -1,0 +1,16 @@
+{% if customize %}
+  <div class="customize clearfix">
+    <ul class="action-links">
+      <li><a href="#" id="load-disabled-blocks">{{ customize }}</a></li>
+    </ul>
+    <div class="canvas">
+      <div class="canvas-content hidden">
+        <p>{{ configuration }}</p>
+        <p>{{ message }}</p>
+        <div id="disabled-blocks">
+          <div class="region disabled-blocks clearfix bg-light row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,26 @@
+<?php
+// chèn vào cuối tất cả các trang
+function notification_firebase_page_attachments_alter(array &$attachments){
+    $attachments['#attached']['library'][] = 'notification_firebase/notification_firebase'; // tên module/tên libraries
+}
+
+// chèn code vào tất cả các trang
+function notification_firebase_page_attachments(array &$attachments) {
+    // chèn vào head
+    $attachments['#attached']['html_head'][] = [
+        [
+          '#type' => 'html_tag',
+          '#tag' => 'meta',
+          '#attributes' => [
+            'name' => 'generator',
+            'content' => 'Mantan v1.6',
+          ],
+        ],
+        'meta-generator',
+    ];
+
+    // chèn html
+    //$attachments['#markup'].= '<b>Test</b>';
+}
+
+

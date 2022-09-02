@@ -1,0 +1,19 @@
+field.field_settings.json:
+  type: mapping
+  label: 'Json table settings'
+  mapping:
+    size:
+      type: string
+      label: 'Size'
+
+field.widget.settings.json_editor_widget:
+  type: field.widget.settings.string_textarea
+  label: 'Json textarea (multiple rows)'
+
+field.formatter.settings.json_datatables_formatter:
+  type: mapping
+  label: 'Json data datatables'
+  mapping:
+    header:
+      type: string
+      label: 'Header'

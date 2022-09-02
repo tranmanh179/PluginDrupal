@@ -1,0 +1,3 @@
+services:
+  notification_firebase.sendNotificationToUser:
+    class: Drupal\notification_firebase\NotificationFirebase

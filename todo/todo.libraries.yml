@@ -1,0 +1,34 @@
+# Custom module library for general purposes.
+todo:
+  js:
+    js/todo.js: {}
+  css:
+    component:
+      css/todo.css: {}
+  dependencies:
+    - core/drupalSettings
+    - todo/axios
+    - todo/vuejs
+
+# Third-party library (self hosted).
+axios:
+  remote: https://github.com/fntneves/jquery-labelauty
+  version: 1.1.0
+  license:
+    name: MIT
+    url: https://github.com/fntneves/jquery-labelauty/blob/v1.1.0/LICENSE
+    gpl-compatible: true
+  js:
+    //cdn.jsdelivr.net/npm/axios/dist/axios.min.js: {type: external, minified: true}
+
+
+# Third-party library (CDN).
+vuejs:
+  remote: https://vuejs.org
+  version: 2.6.14
+  license:
+    name: MIT
+    url: https://github.com/vuejs/vue/blob/dev/LICENSE
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js: {type: external, minified: true}

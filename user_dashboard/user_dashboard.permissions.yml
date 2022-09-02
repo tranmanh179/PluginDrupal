@@ -1,0 +1,9 @@
+set default user_dashboard blocks:
+  title: 'Set default blocks'
+  description: 'Grants access to set default UserDashboard blocks.'
+  restrict access: true
+
+view all users dashboards:
+  title: "View all user's dashboards."
+  description: "Grants access to view all user's dashboards."
+  restrict access: true

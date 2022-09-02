@@ -1,0 +1,7 @@
+get_content_url.get_content:
+  path: '/admin/config/get_content_url/get_content'
+  defaults:
+    _form: '\Drupal\get_content_url\Form\GetContentForm'
+    _title: 'Get content'
+  requirements:
+    _permission: 'get content url plugin'

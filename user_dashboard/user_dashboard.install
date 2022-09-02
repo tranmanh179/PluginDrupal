@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+/**
+ * Implements hook_schema().
+ */
+function user_dashboard_schema() {
+  $schema = array();
+
+  $schema['user_dashboard_block'] = array(
+    'description' => 'Stores block settings, such as region and visibility...;',
+    'fields' => array(
+      'bid' => array(
+        'description' => 'Primary Key: Unique block ID.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'delta' => array(
+        'description' => 'Unique ID for block within a module.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => '0',
+      ),
+      'status' => array(
+        'description' => 'Block enabled status. (1 = enabled, 0 = disabled)',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'weight' => array(
+        'description' => 'Block weight within region.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'region' => array(
+        'description' => 'Theme region within which the block is set.',
+        'type' => 'varchar',
+        'length' => '64',
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'custom' => array(
+        'description' => 'Flag to indicate how users may control visibility of the block. (0 = Users cannot control, 1 = On by default, but can be hidden, 2 = Hidden by default, but can be shown)',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'uid' => array(
+        'description' => 'User udi',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('bid'),
+    'indexes' => array(
+      'uid' => array('uid'),
+    ),
+  );
+
+  return $schema;
+}

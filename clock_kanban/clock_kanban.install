@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function clock_kanban_schema() {
+  $schema = [];
+  $schema['clock_kanban'] = [
+    'description' => 'Table clock counting time',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Id of the table.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "User's {users}.uid.",
+      ],
+      'idNode' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'id task',
+      ],
+
+      'timeStart' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'time start counting',
+      ],
+
+      'timeEnd' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'time end counting',
+      ],
+
+      'timeCount' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'time couting',
+      ],
+
+      'created' => [
+        'mysql_type' => 'DATETIME',
+        'not null' => TRUE,
+      ]
+    ],
+    'primary key' => ['id'],
+
+  ];
+  return $schema;
+}

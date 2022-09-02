@@ -1,0 +1,23 @@
+#dashboard .user-dashboard-region div.block h2 {
+  background: #e0e0d8;
+}
+
+#dashboard .user-dashboard-region .block {
+  border: #ccc 1px solid;
+  clear: both;
+}
+
+#dashboard div.user-dashboard-region {
+  float: left;
+  min-height: 1px;
+}
+
+#dashboard .ui-sortable {
+  border: 2px dashed #ccc;
+  padding: 10px;
+  min-height: 70px;
+}
+.user-dashboard-checkbox.col-12 .form-check {
+  width: 24%;
+  display: inline-block;
+}

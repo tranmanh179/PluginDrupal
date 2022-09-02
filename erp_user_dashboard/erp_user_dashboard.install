@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function erp_user_dashboard_schema() {
+  $schema = [];
+  $schema['erp_user_dashboard'] = [
+    'description' => 'Table save setting user dashboard',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Id of the setting.',
+      ],
+      'idUser' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "User's {users}.uid.",
+      ],
+      'idBlock' => [
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'ID block.',
+      ],
+      
+      'created' => [
+        'mysql_type' => 'DATETIME',
+        'not null' => TRUE,
+      ]
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}

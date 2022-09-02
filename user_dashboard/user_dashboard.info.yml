@@ -1,0 +1,6 @@
+name: 'User Dashboard'
+type: module
+description: 'Provides a dashboard page for every user.'
+core_version_requirement: ^8 || ^9
+package: 'Knowledge Base'
+configure: user_dashboard.settings

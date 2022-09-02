@@ -1,0 +1,106 @@
+jquery_jsonview:
+  version: "v1.2.3"
+  remote: https://github.com/yesmeck/jquery-jsonview
+  license:
+    name: MIT
+    url: https://github.com/bhollis/jsonview/blob/master/license.txt
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.js: {type: external, minified: true, crossorigin: anonymous}
+    js/json_view.js: {}
+  css:
+    component:
+      //cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.css:
+        type: external
+        minified: true
+        attributes:
+          crossorigin: anonymous
+      css/json_table.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+json_editor:
+  version: "v9.7.4"
+  remote: https://github.com/josdejong/jsoneditor
+  license:
+    name: Apache-2.0
+    url: https://github.com/josdejong/jsoneditor/blob/develop/LICENSE
+    gpl-compatible: false
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.7.4/jsoneditor.min.js: {type: external, minified: true, crossorigin: anonymous}
+    js/json_editor.js: { }
+  css:
+    component:
+      //cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.7.4/jsoneditor.min.css:
+        type: external
+        minified: true
+        attributes:
+          crossorigin: anonymous
+      css/json_table.css: { }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
+
+json_table:
+  js:
+    js/json_table.js: { }
+  css:
+    component:
+      css/json_table.css: { }
+
+json_datatables:
+  version: "1.11.5"
+  js:
+    //cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js: {type: external, minified: true, crossorigin: anonymous}
+    js/json_datatables.js: { }
+  css:
+    component:
+      'https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css':
+        type: external
+        minified: true
+        attributes:
+          crossorigin: anonymous
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
+
+json_bootstraptable:
+  version: "1.19.1"
+  js:
+    //unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js: {type: external, minified: true, crossorigin: anonymous}
+  css:
+    component:
+      'https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css':
+        type: external
+        minified: true
+        attributes:
+          crossorigin: anonymous
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery
+
+googleCharts:
+  js:
+    //www.gstatic.com/charts/loader.js: {type: external, minified: true, crossorigin: anonymous}
+    js/googlecharts.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
+highcharts:
+  js:
+    //code.highcharts.com/highcharts.js: {type: external, minified: true, crossorigin: anonymous}
+    js/highchart.js: {}
+  dependencies:
+    - core/jquery

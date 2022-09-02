@@ -1,0 +1,8 @@
+view_kanban:
+  version: 1.x
+  js:
+    js/clock_kanban.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
